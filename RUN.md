@@ -24,6 +24,17 @@ pip install -e .
 
 Put the calibration dataset anywhere you want and change `dataset_dir` in `awq/utils/calib_data.py`'s `get_calib_dataset_openvla` function.
 
+Put the evaliation dataset anywhere you want and change `data_root_dir` in the awq commands below.
+
+Change `save_dataset_statistics` function in `openvla/prismatic/vla/datasets/rlds/utils/data_utils.py`:
+```bash
+def save_dataset_statistics(dataset_statistics, run_dir):
+    """Saves a `dataset_statistics.json` file."""
+    # out_path = run_dir / "dataset_statistics.json"
+    out_path = os.path.join(run_dir, "dataset_statistics.json")
+```
+
+Commands to run experiments
 ```bash
 # run awq
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -35,6 +46,18 @@ python -m awq.entry --model_path openvla/openvla-7b \
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake
+
+# evaluation on bridge_orig
+python -m awq.entry --model_path openvla/openvla-7b \
+    --tasks bridge_orig \
+    --w_bit 4 --q_group_size 128 \
+    --load_awq awq_cache/openvla.pt \
+    --q_backend fake \
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname fake 
 ```
 
 `auto_scale_block` points to `LlamaDecoderLayer` in https://vscode.dev/github/seanxzhan/llm-awq/blob/main/awq/quantize/auto_scale.py#L214

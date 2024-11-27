@@ -73,6 +73,18 @@ parser.add_argument(
 parser.add_argument(
     "--calib_data", type=str, default="pileval", help="awq caliberation dataset name"
 )
+parser.add_argument(
+    "--eval_root_dir", type=str, default="eval", help="where to save eval results"
+)
+parser.add_argument(
+    "--data_root_dir", type=str, default=None, help="where eval data lives"
+)
+parser.add_argument(
+    "--dataset_name", type=str, default="bridge_orig", help="where data to eval"
+)
+parser.add_argument(
+    "--expname", type=str, default=None, help="eval experiment name"
+)
 args = parser.parse_args()
 vila_10_quant_mode = (
     "llava" in args.model_path.lower() or "vila" in args.model_path.lower()
@@ -287,8 +299,6 @@ def main():
     # a hack here to auto set model group
     model, enc = build_model_and_enc(args.model_path)
 
-    exit(0)
-
     if args.tasks is not None:
         # https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/llama.py#L206
         if args.tasks == "wikitext":
@@ -324,8 +334,9 @@ def main():
                 os.makedirs(os.path.dirname(args.output_path), exist_ok=True)
                 with open(args.output_path, "w") as f:
                     json.dump(results, f, indent=2)
-        elif args.tasks == "openvla":
-            pass
+        elif args.tasks == "bridge_orig":
+            from awq.eval_openvla import evaluate_vla
+            evaluate_vla(args, model)
         else:
             task_names = args.tasks.split(",")
 
