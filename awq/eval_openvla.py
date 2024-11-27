@@ -36,11 +36,12 @@ def load_model(path):
     return vla
 
 
-def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM) -> None:
+def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
     print(f"Evaluating OpenVLA Model")
 
     vla = load_model(args.model_path)
-    vla.language_model = vla_language_backbone
+    if vla_language_backbone is not None:
+        vla.language_model = vla_language_backbone
 
     # [Validate] Ensure GPU Available & Set Device / Distributed Context
     distributed_state = PartialState()

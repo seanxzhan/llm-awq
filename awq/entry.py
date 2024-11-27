@@ -85,6 +85,9 @@ parser.add_argument(
 parser.add_argument(
     "--expname", type=str, default=None, help="eval experiment name"
 )
+parser.add_argument(
+    "--baseline", action="store_true", help="eval experiment name"
+)
 args = parser.parse_args()
 vila_10_quant_mode = (
     "llava" in args.model_path.lower() or "vila" in args.model_path.lower()
@@ -115,6 +118,7 @@ from openvla.prismatic.extern.hf.processing_prismatic import (
     PrismaticImageProcessor,
     PrismaticProcessor,
 )
+from transformers.models.llama.modeling_llama import LlamaForCausalLM
 
 
 def build_model_and_enc(model_path):
@@ -198,6 +202,7 @@ def build_model_and_enc(model_path):
                 model_path, config=config, trust_remote_code=True, **kwargs
             )
         if openvla_mode:
+            # loading in the language backbone
             model = AutoModelForVision2Seq.from_pretrained(
                 model_path,
                 torch_dtype=torch.bfloat16,
@@ -295,6 +300,11 @@ def main():
     if args.dump_awq and os.path.exists(args.dump_awq):
         print(f"Found existing AWQ results {args.dump_awq}, exit.")
         exit()
+
+    if args.baseline:
+        from awq.eval_openvla import evaluate_vla
+        evaluate_vla(args)
+        exit(0)
 
     # a hack here to auto set model group
     model, enc = build_model_and_enc(args.model_path)

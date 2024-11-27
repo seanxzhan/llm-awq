@@ -47,7 +47,18 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake
 
-# evaluation on bridge_orig
+# evaluation on bridge_orig with pretrained weights
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline \
+    --tasks bridge_orig \
+    --w_bit 4 --q_group_size 128 \
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname original 
+
+# evaluation on bridge_orig with awq pseudo quant
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
@@ -58,6 +69,13 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --expname fake 
+
+# generate real quantized weights
+mkdir quant_cache
+python -m awq.entry --model_path /PATH/TO/LLAMA3/llama3-8b \
+    --w_bit 4 --q_group_size 128 \
+    --load_awq awq_cache/llama3-8b-w4-g128.pt \
+    --q_backend real --dump_quant quant_cache/llama3-8b-w4-g128-awq.pt
 ```
 
 `auto_scale_block` points to `LlamaDecoderLayer` in https://vscode.dev/github/seanxzhan/llm-awq/blob/main/awq/quantize/auto_scale.py#L214
