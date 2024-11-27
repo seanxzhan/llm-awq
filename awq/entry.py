@@ -53,7 +53,9 @@ parser.add_argument("--no_zero_point", action="store_true", help="disable zero_p
 parser.add_argument("--q_backend", type=str, default="fake", choices=["fake", "real"])
 # save/load real quantized weights
 parser.add_argument("--dump_quant", type=str, default=None, help="save quantized model")
-parser.add_argument("--dump_fake", type=str, default=None, help="save fake-quantized model")
+parser.add_argument(
+    "--dump_fake", type=str, default=None, help="save fake-quantized model"
+)
 parser.add_argument("--load_quant", type=str, default=None, help="load quantized model")
 # apply/save/load awq
 parser.add_argument("--run_awq", action="store_true", help="perform awq search process")
@@ -68,8 +70,14 @@ parser.add_argument(
     action="store_true",
     help="quantizing vila 1.5",
 )
+parser.add_argument(
+    "--calib_data", type=str, default="pileval", help="awq caliberation dataset name"
+)
 args = parser.parse_args()
-vila_10_quant_mode = ("llava" in args.model_path.lower() or "vila" in args.model_path.lower()) and not args.vila_15
+vila_10_quant_mode = (
+    "llava" in args.model_path.lower() or "vila" in args.model_path.lower()
+) and not args.vila_15
+openvla_mode = "openvla" in args.model_path.lower()
 
 max_memory = [v.split(":") for v in (args.max_memory or [])]
 max_memory = {(int(k) if k.isdigit() else k): v for k, v in max_memory}
@@ -86,10 +94,20 @@ print("Quantization config:", q_config)
 
 # build model and tokenizer
 
+from openvla.prismatic.extern.hf.configuration_prismatic import OpenVLAConfig
+from openvla.prismatic.extern.hf.modeling_prismatic import OpenVLAForActionPrediction
+from openvla.prismatic.vla.action_tokenizer import ActionTokenizer
+from transformers import AutoImageProcessor
+from transformers import AutoModelForVision2Seq, AutoProcessor
+from openvla.prismatic.extern.hf.processing_prismatic import (
+    PrismaticImageProcessor,
+    PrismaticProcessor,
+)
+
 
 def build_model_and_enc(model_path):
-    if not os.path.exists(model_path):  # look into ssd
-        raise FileNotFoundError(f"{model_path} not found!")
+    # if not os.path.exists(model_path):  # look into ssd
+    #     raise FileNotFoundError(f"{model_path} not found!")
     print(f"* Building model {model_path}")
 
     # all hf model
@@ -102,8 +120,14 @@ def build_model_and_enc(model_path):
             model_base=None,
             model_name=get_model_name_from_path(model_path),
             device="cpu",
-            **{"use_cache": False}
+            **{"use_cache": False},
         )
+    elif openvla_mode:
+        AutoConfig.register("openvla", OpenVLAConfig)
+        AutoImageProcessor.register(OpenVLAConfig, PrismaticImageProcessor)
+        AutoProcessor.register(OpenVLAConfig, PrismaticProcessor)
+        AutoModelForVision2Seq.register(OpenVLAConfig, OpenVLAForActionPrediction)
+        enc = None
     else:
         config = AutoConfig.from_pretrained(model_path, trust_remote_code=True)
         # Note (Haotian): To avoid OOM after huggingface transformers 4.36.2
@@ -157,10 +181,22 @@ def build_model_and_enc(model_path):
         args.run_awq &= not args.load_awq  # if load_awq, no need to run awq
         # Init model on CPU:
         kwargs = {"torch_dtype": torch.float16, "low_cpu_mem_usage": True}
-        if not vila_10_quant_mode:
+        if not vila_10_quant_mode and not openvla_mode:
             model = AutoModelForCausalLM.from_pretrained(
                 model_path, config=config, trust_remote_code=True, **kwargs
             )
+        if openvla_mode:
+            model = AutoModelForVision2Seq.from_pretrained(
+                model_path,
+                torch_dtype=torch.bfloat16,
+                quantization_config=None,
+                low_cpu_mem_usage=True,
+                trust_remote_code=True,
+            ).language_model.to("cuda")
+            processor = AutoProcessor.from_pretrained(
+                model_path, trust_remote_code=True
+            )
+            action_tokenizer = ActionTokenizer(processor.tokenizer)
 
         model.eval()
 
@@ -174,6 +210,7 @@ def build_model_and_enc(model_path):
                 q_config=q_config,
                 n_samples=128,
                 seqlen=512,
+                calib_data=args.calib_data
             )
             if args.dump_awq:
                 dirpath = os.path.dirname(args.dump_awq)
@@ -250,6 +287,8 @@ def main():
     # a hack here to auto set model group
     model, enc = build_model_and_enc(args.model_path)
 
+    exit(0)
+
     if args.tasks is not None:
         # https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/llama.py#L206
         if args.tasks == "wikitext":
@@ -285,6 +324,8 @@ def main():
                 os.makedirs(os.path.dirname(args.output_path), exist_ok=True)
                 with open(args.output_path, "w") as f:
                     json.dump(results, f, indent=2)
+        elif args.tasks == "openvla":
+            pass
         else:
             task_names = args.tasks.split(",")
 

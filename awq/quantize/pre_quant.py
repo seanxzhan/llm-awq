@@ -39,6 +39,8 @@ def get_blocks(model):
         layers = model.transformer.h
     elif "neox" in str(model.__class__).lower():
         layers = model.gpt_neox.layers
+    elif "openvla" in str(model.__class__).lower():
+        layers = model.model.layers
     else:
         raise NotImplementedError(type(model))
     return layers
@@ -91,6 +93,7 @@ def run_awq(
     calib_data="pileval",
 ):
     from ..utils.calib_data import get_calib_dataset
+    from ..utils.calib_data import get_calib_dataset_openvla 
     from ..utils.module import append_str_prefix, get_op_name
 
     if "bigcode" in str(model.__class__).lower():
@@ -99,9 +102,15 @@ def run_awq(
 
     layers = get_blocks(model)
 
-    samples = get_calib_dataset(
-        data=calib_data, tokenizer=enc, n_samples=n_samples, block_size=seqlen
-    )
+    if calib_data == "openvla":
+        samples = get_calib_dataset_openvla(
+            data=calib_data, tokenizer=enc, n_samples=n_samples, block_size=seqlen
+        )
+    else:
+        samples = get_calib_dataset(
+            data=calib_data, tokenizer=enc, n_samples=n_samples, block_size=seqlen
+        )
+
     samples = torch.cat(samples, dim=0)
 
     inps = []
@@ -126,7 +135,16 @@ def run_awq(
     # patch layer 0 to catch input and kwargs
     layers[0] = Catcher(layers[0])
     try:
-        model(samples.to(next(model.parameters()).device))
+        if calib_data == "openvla":
+            print("running the model with hooks...")
+            pbar = tqdm.tqdm(samples)
+            for sample in pbar:
+                sample = sample.to(next(model.parameters()).device).unsqueeze(0)
+                model(inputs_embeds=sample)
+                pbar.update()
+        else:
+            model(samples.to(next(model.parameters()).device))
+        # model(samples.to(next(model.parameters()).device))
     except ValueError:  # work with early exit
         pass
     del samples
