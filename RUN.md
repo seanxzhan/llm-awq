@@ -39,12 +39,13 @@ Commands to run experiments
 # run awq
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
-    --run_awq --dump_awq awq_cache/openvla.pt \
+    --run_awq --cuda_no_double --dump_awq awq_cache/openvla.pt \
     --calib_data openvla
 
 # pseudo quantize
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
+    --cuda_no_double \
     --q_backend fake
 
 # evaluation on bridge_orig with pretrained weights
