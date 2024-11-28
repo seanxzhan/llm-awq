@@ -1,0 +1,2129 @@
+List of layers in the model:
+========================================
+Layer name: , Layer type: <class 'transformers.models.llama.modeling_llama.LlamaForCausalLM'>
+  - Parameter: model.embed_tokens.weight, Shape: torch.Size([32064, 4096])
+  - Parameter: model.layers.0.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.0.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.0.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.0.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.0.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.0.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.0.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.0.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.0.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.1.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.1.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.1.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.1.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.1.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.1.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.1.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.1.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.1.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.2.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.2.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.2.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.2.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.2.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.2.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.2.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.2.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.2.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.3.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.3.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.3.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.3.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.3.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.3.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.3.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.3.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.3.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.4.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.4.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.4.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.4.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.4.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.4.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.4.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.4.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.4.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.5.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.5.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.5.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.5.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.5.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.5.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.5.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.5.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.5.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.6.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.6.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.6.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.6.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.6.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.6.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.6.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.6.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.6.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.7.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.7.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.7.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.7.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.7.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.7.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.7.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.7.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.7.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.8.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.8.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.8.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.8.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.8.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.8.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.8.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.8.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.8.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.9.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.9.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.9.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.9.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.9.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.9.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.9.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.9.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.9.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.10.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.10.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.10.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.10.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.10.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.10.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.10.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.10.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.10.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.11.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.11.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.11.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.11.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.11.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.11.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.11.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.11.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.11.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.12.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.12.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.12.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.12.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.12.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.12.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.12.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.12.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.12.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.13.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.13.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.13.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.13.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.13.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.13.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.13.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.13.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.13.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.14.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.14.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.14.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.14.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.14.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.14.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.14.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.14.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.14.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.15.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.15.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.15.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.15.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.15.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.15.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.15.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.15.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.15.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.16.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.16.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.16.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.16.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.16.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.16.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.16.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.16.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.16.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.17.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.17.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.17.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.17.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.17.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.17.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.17.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.17.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.17.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.18.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.18.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.18.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.18.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.18.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.18.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.18.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.18.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.18.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.19.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.19.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.19.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.19.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.19.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.19.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.19.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.19.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.19.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.20.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.20.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.20.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.20.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.20.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.20.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.20.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.20.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.20.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.21.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.21.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.21.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.21.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.21.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.21.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.21.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.21.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.21.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.22.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.22.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.22.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.22.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.22.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.22.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.22.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.22.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.22.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.23.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.23.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.23.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.23.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.23.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.23.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.23.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.23.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.23.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.24.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.24.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.24.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.24.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.24.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.24.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.24.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.24.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.24.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.25.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.25.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.25.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.25.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.25.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.25.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.25.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.25.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.25.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.26.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.26.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.26.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.26.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.26.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.26.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.26.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.26.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.26.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.27.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.27.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.27.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.27.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.27.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.27.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.27.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.27.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.27.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.28.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.28.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.28.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.28.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.28.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.28.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.28.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.28.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.28.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.29.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.29.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.29.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.29.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.29.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.29.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.29.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.29.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.29.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.30.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.30.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.30.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.30.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.30.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.30.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.30.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.30.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.30.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.31.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.31.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.31.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.31.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: model.layers.31.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.31.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: model.layers.31.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: model.layers.31.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.layers.31.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: model.norm.weight, Shape: torch.Size([4096])
+  - Parameter: lm_head.weight, Shape: torch.Size([32064, 4096])
+Layer name: model, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaModel'>
+  - Parameter: embed_tokens.weight, Shape: torch.Size([32064, 4096])
+  - Parameter: layers.0.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.0.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.0.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.0.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.0.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.0.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.0.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.0.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.0.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.1.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.1.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.1.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.1.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.1.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.1.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.1.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.1.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.1.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.2.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.2.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.2.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.2.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.2.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.2.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.2.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.2.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.2.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.3.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.3.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.3.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.3.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.3.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.3.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.3.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.3.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.3.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.4.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.4.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.4.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.4.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.4.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.4.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.4.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.4.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.4.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.5.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.5.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.5.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.5.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.5.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.5.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.5.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.5.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.5.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.6.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.6.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.6.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.6.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.6.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.6.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.6.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.6.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.6.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.7.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.7.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.7.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.7.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.7.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.7.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.7.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.7.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.7.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.8.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.8.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.8.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.8.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.8.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.8.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.8.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.8.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.8.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.9.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.9.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.9.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.9.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.9.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.9.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.9.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.9.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.9.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.10.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.10.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.10.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.10.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.10.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.10.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.10.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.10.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.10.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.11.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.11.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.11.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.11.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.11.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.11.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.11.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.11.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.11.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.12.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.12.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.12.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.12.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.12.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.12.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.12.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.12.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.12.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.13.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.13.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.13.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.13.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.13.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.13.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.13.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.13.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.13.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.14.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.14.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.14.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.14.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.14.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.14.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.14.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.14.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.14.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.15.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.15.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.15.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.15.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.15.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.15.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.15.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.15.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.15.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.16.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.16.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.16.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.16.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.16.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.16.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.16.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.16.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.16.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.17.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.17.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.17.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.17.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.17.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.17.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.17.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.17.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.17.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.18.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.18.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.18.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.18.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.18.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.18.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.18.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.18.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.18.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.19.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.19.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.19.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.19.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.19.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.19.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.19.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.19.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.19.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.20.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.20.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.20.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.20.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.20.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.20.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.20.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.20.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.20.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.21.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.21.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.21.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.21.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.21.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.21.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.21.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.21.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.21.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.22.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.22.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.22.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.22.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.22.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.22.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.22.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.22.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.22.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.23.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.23.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.23.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.23.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.23.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.23.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.23.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.23.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.23.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.24.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.24.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.24.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.24.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.24.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.24.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.24.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.24.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.24.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.25.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.25.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.25.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.25.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.25.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.25.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.25.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.25.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.25.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.26.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.26.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.26.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.26.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.26.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.26.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.26.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.26.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.26.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.27.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.27.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.27.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.27.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.27.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.27.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.27.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.27.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.27.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.28.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.28.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.28.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.28.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.28.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.28.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.28.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.28.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.28.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.29.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.29.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.29.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.29.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.29.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.29.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.29.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.29.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.29.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.30.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.30.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.30.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.30.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.30.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.30.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.30.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.30.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.30.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.31.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.31.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.31.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.31.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: layers.31.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.31.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: layers.31.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: layers.31.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: layers.31.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: norm.weight, Shape: torch.Size([4096])
+Layer name: model.embed_tokens, Layer type: <class 'torch.nn.modules.sparse.Embedding'>
+  - Parameter: weight, Shape: torch.Size([32064, 4096])
+Layer name: model.layers, Layer type: <class 'torch.nn.modules.container.ModuleList'>
+  - Parameter: 0.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 0.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 0.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 0.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 0.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 0.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 0.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 0.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 0.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 1.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 1.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 1.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 1.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 1.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 1.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 1.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 1.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 1.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 2.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 2.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 2.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 2.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 2.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 2.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 2.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 2.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 2.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 3.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 3.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 3.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 3.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 3.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 3.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 3.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 3.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 3.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 4.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 4.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 4.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 4.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 4.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 4.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 4.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 4.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 4.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 5.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 5.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 5.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 5.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 5.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 5.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 5.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 5.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 5.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 6.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 6.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 6.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 6.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 6.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 6.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 6.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 6.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 6.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 7.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 7.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 7.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 7.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 7.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 7.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 7.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 7.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 7.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 8.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 8.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 8.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 8.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 8.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 8.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 8.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 8.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 8.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 9.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 9.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 9.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 9.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 9.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 9.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 9.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 9.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 9.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 10.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 10.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 10.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 10.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 10.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 10.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 10.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 10.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 10.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 11.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 11.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 11.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 11.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 11.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 11.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 11.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 11.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 11.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 12.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 12.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 12.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 12.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 12.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 12.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 12.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 12.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 12.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 13.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 13.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 13.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 13.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 13.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 13.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 13.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 13.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 13.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 14.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 14.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 14.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 14.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 14.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 14.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 14.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 14.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 14.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 15.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 15.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 15.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 15.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 15.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 15.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 15.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 15.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 15.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 16.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 16.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 16.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 16.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 16.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 16.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 16.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 16.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 16.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 17.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 17.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 17.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 17.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 17.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 17.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 17.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 17.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 17.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 18.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 18.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 18.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 18.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 18.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 18.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 18.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 18.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 18.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 19.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 19.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 19.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 19.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 19.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 19.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 19.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 19.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 19.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 20.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 20.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 20.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 20.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 20.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 20.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 20.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 20.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 20.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 21.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 21.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 21.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 21.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 21.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 21.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 21.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 21.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 21.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 22.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 22.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 22.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 22.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 22.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 22.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 22.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 22.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 22.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 23.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 23.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 23.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 23.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 23.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 23.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 23.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 23.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 23.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 24.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 24.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 24.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 24.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 24.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 24.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 24.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 24.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 24.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 25.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 25.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 25.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 25.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 25.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 25.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 25.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 25.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 25.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 26.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 26.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 26.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 26.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 26.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 26.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 26.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 26.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 26.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 27.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 27.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 27.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 27.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 27.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 27.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 27.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 27.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 27.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 28.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 28.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 28.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 28.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 28.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 28.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 28.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 28.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 28.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 29.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 29.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 29.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 29.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 29.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 29.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 29.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 29.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 29.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 30.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 30.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 30.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 30.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 30.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 30.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 30.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 30.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 30.post_attention_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 31.self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 31.self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 31.self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 31.self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: 31.mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 31.mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: 31.mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: 31.input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: 31.post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.0, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.0.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.0.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.0.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.0.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.0.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.0.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.0.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.0.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.0.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.0.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.0.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.0.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.0.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.1, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.1.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.1.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.1.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.1.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.1.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.1.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.1.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.1.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.1.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.1.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.1.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.1.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.1.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.2, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.2.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.2.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.2.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.2.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.2.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.2.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.2.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.2.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.2.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.2.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.2.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.2.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.2.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.3, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.3.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.3.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.3.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.3.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.3.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.3.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.3.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.3.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.3.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.3.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.3.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.3.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.3.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.4, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.4.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.4.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.4.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.4.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.4.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.4.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.4.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.4.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.4.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.4.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.4.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.4.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.4.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.5, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.5.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.5.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.5.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.5.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.5.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.5.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.5.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.5.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.5.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.5.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.5.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.5.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.5.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.6, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.6.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.6.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.6.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.6.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.6.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.6.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.6.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.6.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.6.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.6.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.6.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.6.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.6.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.7, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.7.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.7.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.7.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.7.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.7.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.7.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.7.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.7.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.7.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.7.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.7.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.7.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.7.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.8, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.8.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.8.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.8.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.8.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.8.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.8.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.8.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.8.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.8.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.8.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.8.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.8.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.8.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.9, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.9.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.9.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.9.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.9.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.9.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.9.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.9.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.9.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.9.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.9.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.9.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.9.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.9.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.10, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.10.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.10.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.10.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.10.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.10.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.10.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.10.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.10.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.10.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.10.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.10.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.10.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.10.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.11, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.11.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.11.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.11.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.11.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.11.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.11.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.11.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.11.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.11.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.11.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.11.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.11.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.11.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.12, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.12.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.12.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.12.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.12.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.12.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.12.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.12.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.12.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.12.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.12.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.12.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.12.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.12.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.13, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.13.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.13.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.13.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.13.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.13.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.13.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.13.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.13.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.13.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.13.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.13.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.13.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.13.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.14, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.14.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.14.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.14.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.14.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.14.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.14.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.14.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.14.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.14.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.14.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.14.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.14.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.14.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.15, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.15.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.15.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.15.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.15.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.15.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.15.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.15.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.15.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.15.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.15.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.15.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.15.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.15.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.16, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.16.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.16.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.16.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.16.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.16.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.16.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.16.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.16.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.16.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.16.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.16.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.16.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.16.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.17, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.17.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.17.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.17.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.17.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.17.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.17.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.17.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.17.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.17.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.17.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.17.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.17.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.17.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.18, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.18.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.18.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.18.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.18.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.18.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.18.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.18.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.18.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.18.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.18.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.18.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.18.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.18.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.19, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.19.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.19.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.19.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.19.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.19.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.19.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.19.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.19.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.19.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.19.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.19.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.19.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.19.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.20, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.20.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.20.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.20.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.20.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.20.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.20.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.20.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.20.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.20.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.20.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.20.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.20.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.20.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.21, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.21.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.21.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.21.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.21.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.21.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.21.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.21.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.21.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.21.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.21.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.21.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.21.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.21.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.22, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.22.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.22.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.22.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.22.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.22.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.22.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.22.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.22.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.22.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.22.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.22.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.22.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.22.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.23, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.23.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.23.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.23.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.23.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.23.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.23.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.23.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.23.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.23.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.23.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.23.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.23.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.23.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.24, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.24.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.24.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.24.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.24.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.24.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.24.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.24.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.24.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.24.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.24.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.24.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.24.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.24.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.25, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.25.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.25.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.25.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.25.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.25.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.25.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.25.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.25.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.25.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.25.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.25.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.25.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.25.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.26, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.26.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.26.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.26.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.26.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.26.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.26.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.26.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.26.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.26.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.26.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.26.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.26.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.26.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.27, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.27.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.27.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.27.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.27.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.27.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.27.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.27.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.27.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.27.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.27.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.27.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.27.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.27.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.28, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.28.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.28.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.28.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.28.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.28.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.28.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.28.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.28.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.28.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.28.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.28.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.28.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.28.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.29, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.29.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.29.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.29.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.29.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.29.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.29.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.29.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.29.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.29.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.29.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.29.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.29.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.29.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.30, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.30.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.30.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.30.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.30.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.30.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.30.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.30.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.30.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.30.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.30.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.30.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.30.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.30.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.31, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>
+  - Parameter: self_attn.q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: self_attn.o_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: mlp.gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: mlp.down_proj.weight, Shape: torch.Size([4096, 11008])
+  - Parameter: input_layernorm.weight, Shape: torch.Size([4096])
+  - Parameter: post_attention_layernorm.weight, Shape: torch.Size([4096])
+Layer name: model.layers.31.self_attn, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaSdpaAttention'>
+  - Parameter: q_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: k_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: v_proj.weight, Shape: torch.Size([4096, 4096])
+  - Parameter: o_proj.weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.31.self_attn.q_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.31.self_attn.k_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.31.self_attn.v_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.31.self_attn.o_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 4096])
+Layer name: model.layers.31.self_attn.rotary_emb, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRotaryEmbedding'>
+Layer name: model.layers.31.mlp, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaMLP'>
+  - Parameter: gate_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: up_proj.weight, Shape: torch.Size([11008, 4096])
+  - Parameter: down_proj.weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.31.mlp.gate_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.31.mlp.up_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([11008, 4096])
+Layer name: model.layers.31.mlp.down_proj, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([4096, 11008])
+Layer name: model.layers.31.mlp.act_fn, Layer type: <class 'torch.nn.modules.activation.SiLU'>
+Layer name: model.layers.31.input_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.layers.31.post_attention_layernorm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: model.norm, Layer type: <class 'transformers.models.llama.modeling_llama.LlamaRMSNorm'>
+  - Parameter: weight, Shape: torch.Size([4096])
+Layer name: lm_head, Layer type: <class 'torch.nn.modules.linear.Linear'>
+  - Parameter: weight, Shape: torch.Size([32064, 4096])
+========================================

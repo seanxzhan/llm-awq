@@ -4,6 +4,7 @@ import torch
 import argparse
 import os
 import json
+from awq.utils.print_llama_layers import export_layers_to_txt
 from accelerate import (
     init_empty_weights,
     infer_auto_device_map,
@@ -171,7 +172,7 @@ def build_model_and_enc(model_path):
         )
 
         model.tie_weights()
-
+        
         # Infer device map
         kwargs = {"max_memory": max_memory} if len(max_memory) else {}
         device_map = infer_auto_device_map(
@@ -311,6 +312,8 @@ def main():
 
     # a hack here to auto set model group
     model, enc = build_model_and_enc(args.model_path)
+    #uncomment below to print the layers of the model
+    #export_layers_to_txt(model, filename=os.path.join("./model_layers.txt"))
 
     if args.tasks is not None:
         # https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/llama.py#L206
