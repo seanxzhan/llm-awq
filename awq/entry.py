@@ -66,6 +66,9 @@ parser.add_argument(
     "--load_awq", type=str, default=None, help="load the awq search results"
 )
 parser.add_argument(
+    "--cuda_no_double", action="store_true", help="disable cuda loading twice"
+)
+parser.add_argument(
     "--vila-15",
     action="store_true",
     help="quantizing vila 1.5",
@@ -300,8 +303,8 @@ def main():
     if args.dump_awq and os.path.exists(args.dump_awq):
         print(f"Found existing AWQ results {args.dump_awq}, exit.")
         exit()
-
-    if args.baseline:
+    #TO DEAL WITH THE CUDA ERROR
+    if args.cuda_no_double: 
         from awq.eval_openvla import evaluate_vla
         evaluate_vla(args)
         exit(0)
