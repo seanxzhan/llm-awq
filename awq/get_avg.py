@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-plt_name = 'plot-orig-naive-awq'
+plt_name = 'plot-orig-naive-awq-salient'
 file_paths = [
     # 'awq/summary_csvs/orig-train-vs.csv',
     # 'awq/summary_csvs/lora-train-vs.csv',
@@ -11,14 +11,15 @@ file_paths = [
     'awq/summary_csvs/orig.csv',
     'awq/summary_csvs/naive.csv',
     'awq/summary_csvs/awq.csv',
+    'awq/summary_csvs/salient.csv',
 ]
-colors = ['green', 'blue', 'red']
-labels = ['orig', 'naive', 'awq']
+colors = ['green', 'blue', 'red', 'pink']
+labels = ['orig', 'naive', 'awq', 'salient']
 
 # Load data into a list of dataframes
 data_frames = [pd.read_csv(file_path) for file_path in file_paths]
 
-print([df['Value'].mean() for df in data_frames])
+print(list(zip(labels, [df['Value'].mean() for df in data_frames])))
 
 # Apply the exponential moving average (EWMA) smoothing
 TSBOARD_SMOOTHING = 0.85

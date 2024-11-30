@@ -54,16 +54,6 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname orig 
 
-# Finetuned weights
-python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --eval_set_test\
-    --batch_size 2 \
-    --eval_root_dir eval \
-    --data_root_dir /datasets \
-    --dataset_name bridge_orig \
-    --lora_pt /sota/openvla/finetuned.pt \
-    --expname lora-orig
-
 # Pretrained weights with just linear layers pseudo quantized
 python -m awq.entry --model_path openvla/openvla-7b \
     --eval_set_test\
@@ -101,6 +91,16 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --expname awq 
+
+# Finetuned weights
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline --eval_set_test\
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --lora_pt /sota/openvla/finetuned.pt \
+    --expname lora-orig
 
 # generate real quantized weights
 mkdir quant_cache
