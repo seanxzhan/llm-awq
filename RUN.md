@@ -79,7 +79,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
 
 # evaluation on bridge_orig with pseudo linear salient quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --eval_set_test \
+    --eval_set_test \
     --tasks linear_salient_eval \
     --w_bit 4 --q_group_size 128 \
     --calib_data openvla --batch_size 2 \
