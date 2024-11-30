@@ -47,7 +47,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
 
 # evaluation on bridge_orig with pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --cuda_no_double\
+    --baseline --cuda_no_double --eval_set_test\
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
     --batch_size 2 \
