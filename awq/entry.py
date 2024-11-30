@@ -18,6 +18,7 @@ from awq.quantize.quantizer import (
     pseudo_quantize_model_weight,
     real_quantize_model_weight,
 )
+from awq.quantize.linear_pseudo_quantize import pseudo_quantize_model_salient_weight_fp16
 from awq.utils.lm_eval_adaptor import LMEvalAdaptor
 from awq.utils.utils import simple_dispatch_model
 from datasets import load_dataset
@@ -250,7 +251,7 @@ def build_model_and_enc(model_path):
             apply_awq(model, awq_results)
 
         # weight quantization
-        if args.w_bit is not None:
+        if args.w_bit is not None and args.tasks != "linear_salient_eval":
             if args.q_backend == "fake":
                 assert (
                     args.dump_quant is None
@@ -371,6 +372,10 @@ def main():
                     json.dump(results, f, indent=2)
         elif args.tasks == "bridge_orig":
             from awq.eval_openvla import evaluate_vla
+            evaluate_vla(args, model)
+        elif args.tasks == "linear_salient_eval":
+            from awq.eval_openvla import evaluate_vla
+            pseudo_quantize_model_salient_weight_fp16(model, enc, args.w_bit, args.q_group_size, n_samples=128, seqlen=512, calib_data=args.calib_data)
             evaluate_vla(args, model)
         elif args.tasks == "model_statistics":
             Byte = 8
