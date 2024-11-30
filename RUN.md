@@ -54,7 +54,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname original 
+    --expname fake 
 
 # evaluation on bridge_orig with awq pseudo quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -66,7 +66,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname fake 
+    --expname awq 
 
 # generate real quantized weights
 mkdir quant_cache
