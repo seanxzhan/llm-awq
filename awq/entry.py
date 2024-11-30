@@ -98,6 +98,9 @@ parser.add_argument(
 parser.add_argument(
     "--eval_set_test", action="store_true", help="eval test set to the test split, train false"
 )
+parser.add_argument(
+    "--lora_pt", type=str, help="loads lora finetuned weights"
+)
 args = parser.parse_args()
 vila_10_quant_mode = (
     "llava" in args.model_path.lower() or "vila" in args.model_path.lower()
@@ -265,9 +268,15 @@ def build_model_and_enc(model_path):
                     args.dump_quant is None
                 ), "Need to use real quantization to dump quantized weights"
                 pseudo_quantize_model_weight(model, w_bit=args.w_bit, q_config=q_config)
+                print("---------")
+                print("yayyy")
+                print("---------")
                 if args.dump_fake:
                     model.save_pretrained(args.dump_fake)
                     print("Pseudo-quantized models saved at", args.dump_fake)
+                    print("---------")
+                    print("yayyy")
+                    print("---------")
             elif args.q_backend == "real":  # real quantization
                 real_quantize_model_weight(model, w_bit=args.w_bit, q_config=q_config)
                 if args.dump_quant:
@@ -334,7 +343,7 @@ def main():
         print(f"Found existing AWQ results {args.dump_awq}, exit.")
         exit()
     #TO DEAL WITH THE CUDA ERROR
-    if args.cuda_no_double: 
+    if args.baseline: 
         from awq.eval_openvla import evaluate_vla
         evaluate_vla(args)
         exit(0)
