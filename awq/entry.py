@@ -24,6 +24,8 @@ from datasets import load_dataset
 from torch import nn
 import tqdm
 
+from torchprofile import profile_macs
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_path", type=str, help="path of the hf model")
 parser.add_argument("--batch_size", type=int, default=1, help="batch size")
@@ -294,6 +296,23 @@ def build_model_and_enc(model_path):
 
     return model, enc
 
+def get_model_size(model: nn.Module, data_width=16, group_size=-1):
+
+    if group_size != -1:
+        data_width += (16 + 4) / group_size
+
+    num_elements = 0
+    for param in model.parameters():
+        num_elements += param.numel()
+    return num_elements * data_width
+
+def get_num_params(model: nn.Module):
+    num_params = 0
+    for param in model.parameters():
+        if param.requires_grad:
+            num_params += param.numel()
+    return num_params
+
 
 def main():
     if args.output_path is not None and os.path.exists(args.output_path):
@@ -353,6 +372,18 @@ def main():
         elif args.tasks == "bridge_orig":
             from awq.eval_openvla import evaluate_vla
             evaluate_vla(args, model)
+        elif args.tasks == "model_statistics":
+            Byte = 8
+            KiB = 1024 * Byte
+            MiB = 1024 * KiB
+            GiB = 1024 * MiB
+            print(f"LLM backbone model number of trainable parameters: {get_num_params(model)}")
+            model_size = get_model_size(model, data_width=args.w_bit, group_size=args.q_group_size)
+            print(f"LLM backbone model size after quantization: {model_size/MiB:.2f} MiB")
+            torch.cuda.empty_cache()
+            num_macs = profile_macs(model, torch.zeros(32, 32).cuda().int())
+            print(f"LLM backbone model number of MACs (note missing components): {num_macs}")
+
         else:
             task_names = args.tasks.split(",")
 

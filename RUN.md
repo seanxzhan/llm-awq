@@ -76,6 +76,13 @@ python -m awq.entry --model_path /PATH/TO/LLAMA3/llama3-8b \
     --w_bit 4 --q_group_size 128 \
     --load_awq awq_cache/llama3-8b-w4-g128.pt \
     --q_backend real --dump_quant quant_cache/llama3-8b-w4-g128-awq.pt
+
+# print model statistics
+pip install torchprofile
+python -m awq.entry --model_path openvla/openvla-7b \
+    --tasks model_statistics \
+    --w_bit 4 --q_group_size 128 \
+    --load_awq awq_cache/openvla.pt
 ```
 
 `auto_scale_block` points to `LlamaDecoderLayer` in https://vscode.dev/github/seanxzhan/llm-awq/blob/main/awq/quantize/auto_scale.py#L214
