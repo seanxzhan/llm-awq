@@ -45,33 +45,46 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --run_awq --dump_awq awq_cache/openvla.pt \
     --calib_data openvla
 
-# evaluation on bridge_orig with orig
+# Pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --cuda_no_double --eval_set_test\
-    --tasks bridge_orig \
+    --baseline --eval_set_test\
     --batch_size 2 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --expname orig 
 
-# evaluation on bridge_orig with pretrained weights
+# Finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --cuda_no_double --eval_set_test\
-    --tasks bridge_orig \
-    --w_bit 4 --q_group_size 128 \
+    --baseline --eval_set_test\
     --batch_size 2 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname fake 
+    --lora_pt /sota/openvla/finetuned.pt \
+    --expname lora-orig
+
+# Pretrained weights with just linear layers pseudo quantized
+python -m awq.entry --model_path openvla/openvla-7b \
+    --eval_set_test\
+    --tasks bridge_orig \
+    --w_bit 4 --q_group_size 128 \
+    --q_backend fake \
+    --dump_fake saved_models/naive.pt \
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname naive 
 
 # evaluation on bridge_orig with awq pseudo quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
+     --eval_set_test \
     --tasks bridge_orig \
-    --w_bit 4 --q_group_size 128 --cuda_no_double --eval_set_test\
-    --load_awq awq_cache/openvla.pt \
+    --w_bit 4 --q_group_size 128 \
     --q_backend fake \
+    --dump_fake saved_models/awq.pt \
+    --load_awq awq_cache/openvla.pt \
     --batch_size 2 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
@@ -86,6 +99,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --q_backend real --dump_quant quant_cache/openvla-awq.pt
 
 # evaluation on brige_orig with awq real quant (on test split)
+# not working right now due to bfloat16 vs. float16
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128  --eval_set_test\

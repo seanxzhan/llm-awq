@@ -36,12 +36,40 @@ def load_model(path):
     return vla
 
 
+def load_model_lora(path, lora_pt):
+    # loads in original model
+    AutoModelForVision2Seq.register(OpenVLAConfig, OpenVLAForActionPrediction)
+    vla = AutoModelForVision2Seq.from_pretrained(
+        path,
+        torch_dtype=torch.bfloat16,
+        quantization_config=None,
+        low_cpu_mem_usage=True,
+        trust_remote_code=True,
+    )
+    print(vla)
+    exit(0)
+
+    state_dict = torch.load(lora_pt)
+    vla.load_state_dict(state_dict)
+
+    vla.to('cuda')
+    vla.eval()
+    return vla
+
+
 def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
     print(f"Evaluating OpenVLA Model")
 
-    vla = load_model(args.model_path)
+    if args.lora_pt is None:
+        vla = load_model(args.model_path)
+    else:
+        vla = load_model_lora(args.model_path, args.lora_pt)
+        assert vla_language_backbone is None
     if vla_language_backbone is not None:
         vla.language_model = vla_language_backbone
+        print("---------")
+        print("yayyy")
+        print("---------")
 
     # [Validate] Ensure GPU Available & Set Device / Distributed Context
     distributed_state = PartialState()
@@ -72,12 +100,9 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         image_transform=processor.image_processor.apply_transform,
         prompt_builder_fn=PurePromptBuilder if "v01" not in args.model_path else VicunaV15ChatPromptBuilder,
     )
-    train_eval_set = None
-    if args.eval_set_test == True: 
-        train_eval_set = False
-    else:
-        train_eval_set = True
-    print("train_eval_set (train is true or false):", train_eval_set)
+    print("--------------------------")
+    print("Training: ", not args.eval_set_test)
+    print("--------------------------")
     vla_dataset = RLDSDataset(
         args.data_root_dir,
         args.dataset_name,
@@ -85,7 +110,7 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         resize_resolution=(224, 224),  # 224 is hard coded, originally tuple(vla.module.config.image_sizes)
         shuffle_buffer_size=100_000,
         image_aug=False,
-        train = train_eval_set
+        train = not args.eval_set_test
     )
 
     # [Important] Save Dataset Statistics =>> used to de-normalize actions for inference!
