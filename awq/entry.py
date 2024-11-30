@@ -166,9 +166,18 @@ def build_model_and_enc(model_path):
     if args.load_quant:  # directly load quantized weights
         print("Loading pre-computed quantized weights...")
         with init_empty_weights():
-            model = AutoModelForCausalLM.from_config(
-                config=config, torch_dtype=torch.float16, trust_remote_code=True
-            )
+            if not openvla_mode:
+                model = AutoModelForCausalLM.from_config(
+                    config=config, torch_dtype=torch.float16, trust_remote_code=True
+                )
+            else:
+                model = AutoModelForVision2Seq.from_pretrained(
+                    model_path,
+                    torch_dtype=torch.bfloat16,
+                    quantization_config=None,
+                    low_cpu_mem_usage=True,
+                    trust_remote_code=True,
+                ).language_model
         real_quantize_model_weight(
             model, w_bit=args.w_bit, q_config=q_config, init_only=True
         )
@@ -216,10 +225,6 @@ def build_model_and_enc(model_path):
                 low_cpu_mem_usage=True,
                 trust_remote_code=True,
             ).language_model.to("cuda")
-            processor = AutoProcessor.from_pretrained(
-                model_path, trust_remote_code=True
-            )
-            action_tokenizer = ActionTokenizer(processor.tokenizer)
 
         model.eval()
 
