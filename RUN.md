@@ -56,10 +56,10 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname original 
 
-# evaluation on bridge_orig with awq pseudo quant
+# evaluation on bridge_orig with awq pseudo quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
-    --w_bit 4 --q_group_size 128 --cuda_no_double\
+    --w_bit 4 --q_group_size 128 --cuda_no_double --eval_set_test\
     --load_awq awq_cache/openvla.pt \
     --q_backend fake \
     --batch_size 2 \
@@ -75,10 +75,10 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --load_awq awq_cache/openvla.pt \
     --q_backend real --dump_quant quant_cache/openvla-awq.pt
 
-# evaluation on brige_orig with awq real quant
+# evaluation on brige_orig with awq real quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
-    --w_bit 4 --q_group_size 128 \
+    --w_bit 4 --q_group_size 128  --eval_set_test\
     --load_quant quant_cache/openvla-awq-v2.pt \
     --batch_size 2 \
     --eval_root_dir eval \
