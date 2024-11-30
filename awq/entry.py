@@ -301,7 +301,8 @@ def build_model_and_enc(model_path):
             ],
             **kwargs,
         )
-        model = dispatch_model(model, device_map=device_map)
+        if args.tasks != "linear_salient_eval":
+            model = dispatch_model(model, device_map=device_map)
 
     return model, enc
 
@@ -384,6 +385,25 @@ def main():
         elif args.tasks == "linear_salient_eval":
             from awq.eval_openvla import evaluate_vla
             pseudo_quantize_model_salient_weight_fp16(model, enc, args.w_bit, args.q_group_size, n_samples=128, seqlen=512, calib_data=args.calib_data)
+            # Move the model to GPU (as much as possible) for LM evaluation
+            kwargs = {
+                "max_memory": get_balanced_memory(
+                    model, max_memory if len(max_memory) > 0 else None
+                )
+            }
+            device_map = infer_auto_device_map(
+                model,
+                # TODO: can we remove this?
+                no_split_module_classes=[
+                    "OPTDecoderLayer",
+                    "LlamaDecoderLayer",
+                    "BloomBlock",
+                    "MPTBlock",
+                    "DecoderLayer",
+                ],
+                **kwargs,
+            )
+            model = dispatch_model(model, device_map=device_map)
             evaluate_vla(args, model)
         elif args.tasks == "model_statistics":
             Byte = 8

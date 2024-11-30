@@ -66,6 +66,17 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname fake 
 
+# evaluation on bridge_orig with pseudo linear salient quant (on test split)
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline --eval_set_test \
+    --tasks linear_salient_eval \
+    --w_bit 4 --q_group_size 128 \
+    --calib_data openvla --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname salient
+
 # evaluation on bridge_orig with awq pseudo quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
