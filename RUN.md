@@ -45,6 +45,16 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --run_awq --dump_awq awq_cache/openvla.pt \
     --calib_data openvla
 
+# evaluation on bridge_orig with orig
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline --cuda_no_double --eval_set_test\
+    --tasks bridge_orig \
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname orig 
+
 # evaluation on bridge_orig with pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
     --baseline --cuda_no_double --eval_set_test\
