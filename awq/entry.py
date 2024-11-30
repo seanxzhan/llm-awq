@@ -94,6 +94,9 @@ parser.add_argument(
 parser.add_argument(
     "--baseline", action="store_true", help="eval experiment name"
 )
+parser.add_argument(
+    "--eval_set_test", action="store_true", help="eval test set to the test split, train false"
+)
 args = parser.parse_args()
 vila_10_quant_mode = (
     "llava" in args.model_path.lower() or "vila" in args.model_path.lower()

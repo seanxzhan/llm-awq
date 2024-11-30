@@ -72,6 +72,12 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         image_transform=processor.image_processor.apply_transform,
         prompt_builder_fn=PurePromptBuilder if "v01" not in args.model_path else VicunaV15ChatPromptBuilder,
     )
+    train_eval_set = None
+    if args.eval_set_test == True: 
+        train_eval_set = False
+    else:
+        train_eval_set = True
+    print("train_eval_set (train is true or false):", train_eval_set)
     vla_dataset = RLDSDataset(
         args.data_root_dir,
         args.dataset_name,
@@ -79,6 +85,7 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         resize_resolution=(224, 224),  # 224 is hard coded, originally tuple(vla.module.config.image_sizes)
         shuffle_buffer_size=100_000,
         image_aug=False,
+        train = train_eval_set
     )
 
     # [Important] Save Dataset Statistics =>> used to de-normalize actions for inference!
