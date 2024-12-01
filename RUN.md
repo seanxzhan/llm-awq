@@ -43,16 +43,31 @@ Commands to run experiments
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --run_awq --dump_awq awq_cache/openvla.pt \
-    --calib_data openvla
+    --cali
+
+# run awq on lora
+python -m awq.entry --model_path openvla/openvla-7b \
+    --w_bit 4 --q_group_size 128 \
+    --run_awq --dump_awq awq_cache/openvla-lora.pt \
+    --cali
+
+# Pretrained weights
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline \
+    --batch_size 1 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname orig-train-no-last-bit
 
 # Pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
     --baseline --eval_set_test\
-    --batch_size 2 \
+    --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname orig 
+    --expname orig-test-no-last-bit
 
 # Pretrained weights with just linear layers pseudo quantized
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -94,13 +109,37 @@ python -m awq.entry --model_path openvla/openvla-7b \
 
 # Finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --eval_set_test\
-    --batch_size 2 \
+    --baseline \
+    --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --lora_pt /sota/openvla/finetuned.pt \
-    --expname lora-orig
+    --expname lora-orig-train-no-last-bit
+
+# Finetuned weights
+python -m awq.entry --model_path openvla/openvla-7b \
+    --baseline --eval_set_test\
+    --batch_size 1 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --lora_pt /sota/openvla/finetuned.pt \
+    --expname lora-orig-test-no-last-bit
+
+
+python -m awq.entry --model_path openvla/openvla-7b \
+     --eval_set_test \
+    --tasks bridge_orig \
+    --w_bit 4 --q_group_size 128 \
+    --q_backend fake \
+    --dump_fake saved_models/awq.pt \
+    --load_awq awq_cache/openvla.pt \
+    --batch_size 2 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --expname lora-awq-train-no-last-bit
 
 # generate real quantized weights
 mkdir quant_cache

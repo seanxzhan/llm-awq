@@ -172,5 +172,5 @@ cython_debug/
 *.json
 __pycache__
 
-eval
+eval*
 awq_cache

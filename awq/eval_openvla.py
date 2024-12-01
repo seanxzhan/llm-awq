@@ -2,6 +2,7 @@ import os
 from collections import deque
 import torch
 import tqdm
+import numpy as np
 from accelerate import PartialState
 from torch.utils.data import DataLoader
 from transformers import AutoModelForVision2Seq, AutoProcessor
@@ -21,6 +22,21 @@ from transformers.models.llama.modeling_llama import LlamaForCausalLM
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 from torch.utils.tensorboard import SummaryWriter
+
+def detokenize_actions(action_token_ids: np.ndarray, vla, action_tokenizer, unnorm_key):
+    normalized_actions = action_tokenizer.decode_token_ids_to_actions(action_token_ids)
+
+    # Un-normalize Actions
+    action_norm_stats = vla.get_action_stats(unnorm_key)
+    mask = action_norm_stats.get("mask", np.ones_like(action_norm_stats["q01"], dtype=bool))
+    action_high, action_low = np.array(action_norm_stats["q99"]), np.array(action_norm_stats["q01"])
+    actions = np.where(
+        mask,
+        0.5 * (normalized_actions + 1) * (action_high - action_low) + action_low,
+        normalized_actions,
+    )
+
+    return actions
 
 def load_model(path):
     # loads in original model
@@ -46,11 +62,15 @@ def load_model_lora(path, lora_pt):
         low_cpu_mem_usage=True,
         trust_remote_code=True,
     )
-    print(vla)
-    exit(0)
+    # print(vla)
+    # exit(0)
 
     state_dict = torch.load(lora_pt)
-    vla.load_state_dict(state_dict)
+    state_dict_good = {}
+    for k, v in state_dict.items():
+        state_dict_good[k[len("base_model.model."):]] = v
+
+    vla.load_state_dict(state_dict_good)
 
     vla.to('cuda')
     vla.eval()
@@ -136,6 +156,8 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
 
     writer = SummaryWriter(os.path.join(run_dir, "summary"))
 
+    assert args.batch_size == 1
+
     # Evaluate!
     with tqdm.tqdm(total=len(dataloader), leave=False) as progress:
         for batch_idx, batch in enumerate(dataloader):
@@ -148,6 +170,8 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
                 )
                 loss = output.loss
 
+            # breakpoint()
+
             # Compute Accuracy and L1 Loss for Logging
             action_logits = output.logits[
                 :, 256:-1
@@ -155,6 +179,14 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
             action_preds = action_logits.argmax(dim=2)
             action_gt = batch["labels"][:, 1:].to(action_preds.device)
             mask = action_gt > action_tokenizer.action_token_begin_idx
+            assert mask.sum().item() == 7
+            assert action_preds[:, -1] == 2
+            assert action_gt[:, -1] == 2
+
+            # no last bit
+            action_preds = action_preds[:, :-2]
+            action_gt = action_gt[:, :-2]
+            mask = mask[:, :-2]
 
             # Compute Accuracy
             correct_preds = (action_preds == action_gt) & mask
@@ -168,6 +200,8 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
                 action_tokenizer.decode_token_ids_to_actions(action_gt[mask].cpu().numpy())
             )
             action_l1_loss = torch.nn.functional.l1_loss(continuous_actions_pred, continuous_actions_gt)
+
+            # breakpoint()
 
             # Store recent train metrics
             recent_losses.append(loss.item())
