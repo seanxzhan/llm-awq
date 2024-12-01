@@ -73,6 +73,9 @@ parser.add_argument(
     "--cuda_no_double", action="store_true", help="disable cuda loading twice"
 )
 parser.add_argument(
+    "--no_last_bit_eval", action="store_true", help="only eval 0 to 6 bit if true"
+)
+parser.add_argument(
     "--vila-15",
     action="store_true",
     help="quantizing vila 1.5",
