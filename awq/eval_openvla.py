@@ -77,6 +77,7 @@ def load_model_lora(path, lora_pt):
     return vla
 
 
+@torch.no_grad()
 def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
     print(f"Evaluating OpenVLA Model")
 

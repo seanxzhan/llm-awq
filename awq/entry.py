@@ -250,7 +250,6 @@ def build_model_and_enc(model_path):
                     state_dict_good[k[len("base_model.model."):]] = v
                 full_model.load_state_dict(state_dict_good)
                 model = full_model.language_model.to("cuda")
-                del full_model
 
         model.eval()
 
