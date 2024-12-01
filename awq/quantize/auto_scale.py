@@ -9,6 +9,7 @@ from transformers.activations import GELUActivation
 
 from .qmodule import ScaledActivation
 from ..utils.module import get_op_by_name, get_op_name, set_op_by_name
+#from ..utils.print_llama_layers import export_layers_to_txt
 
 __all__ = ["auto_scale_block", "apply_scale"]
 
@@ -213,6 +214,7 @@ def auto_scale_block(module, module_kwargs, w_bit, q_config, input_feat):
 
     elif isinstance(module, LlamaDecoderLayer):
         # attention input
+        #export_layers_to_txt(module)
         scales_list.append(
             _auto_get_scale(
                 prev_op=module.input_layernorm,

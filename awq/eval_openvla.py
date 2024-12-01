@@ -155,10 +155,19 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
             action_preds = action_logits.argmax(dim=2)
             action_gt = batch["labels"][:, 1:].to(action_preds.device)
             mask = action_gt > action_tokenizer.action_token_begin_idx
-
+            
             # Compute Accuracy
             correct_preds = (action_preds == action_gt) & mask
+            #print("no_last_bit_eval", args.no_last_bit_eval)
+            if args.no_last_bit_eval == True: 
+                correct_preds = correct_preds[:6]
+                mask = mask[:6]
+                #print(f"Shape of correct_preds after slicing: {correct_preds.shape}")
+                #print(f"Shape of mask after slicing: {mask.shape}")
+                
+
             action_accuracy = correct_preds.sum().float() / mask.sum().float()
+
 
             # Compute L1 Loss on Predicted (Continuous) Actions
             continuous_actions_pred = torch.tensor(
@@ -167,6 +176,12 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
             continuous_actions_gt = torch.tensor(
                 action_tokenizer.decode_token_ids_to_actions(action_gt[mask].cpu().numpy())
             )
+            if args.no_last_bit_eval == True: 
+                continuous_actions_pred = continuous_actions_pred[:6]
+                continuous_actions_gt = continuous_actions_gt[:6]
+                #print(f"Shape of continuous_actions_pred after slicing: {continuous_actions_pred.shape}")
+                #print(f"Shape of continuous_actions_gt after slicing: {continuous_actions_gt.shape}")
+
             action_l1_loss = torch.nn.functional.l1_loss(continuous_actions_pred, continuous_actions_gt)
 
             # Store recent train metrics

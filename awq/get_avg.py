@@ -1,20 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
-plt_name = 'plot-orig-naive-awq-salient'
+import numpy as np
+plt_name = 'plot-awq-no-last-bit-5-trials'
 file_paths = [
-    # 'awq/summary_csvs/orig-train-vs.csv',
-    # 'awq/summary_csvs/lora-train-vs.csv',
-    # 'awq/summary_csvs/orig_actionl1.csv',
-    # 'awq/summary_csvs/naive_actionl1.csv',
-    # 'awq/summary_csvs/awq_actionl1.csv',
-    'awq/summary_csvs/orig.csv',
-    'awq/summary_csvs/naive.csv',
-    'awq/summary_csvs/awq.csv',
-    'awq/summary_csvs/salient.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-1_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-2_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-3_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-4_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-5_summary.csv',
 ]
-colors = ['green', 'blue', 'red', 'pink']
-labels = ['orig', 'naive', 'awq', 'salient']
+colors = ['green', 'blue', 'red', 'pink', 'orange']
+labels = ['awq-1', 'awq-2', 'awq-3', 'awq-4', 'awq-5']
+#colors = ['green', 'blue', 'red', 'pink']
+#labels = ['orig', 'naive', 'awq', 'salient']
 
 # Load data into a list of dataframes
 data_frames = [pd.read_csv(file_path) for file_path in file_paths]
@@ -38,6 +36,20 @@ plt.title(plt_name)
 plt.grid(alpha=0.3)
 plt.legend()
 
-plt.savefig(f'{plt_name}.png', bbox_inches='tight', pad_inches=0, dpi=150, 
+plt.savefig(f'awq/plots/{plt_name}.png', bbox_inches='tight', pad_inches=0, dpi=150, 
             transparent=False)
 print(f'file saved to {plt_name}.png')
+
+# Open the file in write mode ('w')
+with open(f"awq/plots/{plt_name}-averages.txt", "w") as file:
+    # Write content to the file
+    means = list(zip(labels, [df['Value'].mean() for df in data_frames]))
+    file.write(str(means))
+    mean_values = [mean for _, mean in means]
+
+    # Calculate the mean of the means
+    mean_of_means = np.mean(mean_values)
+    print(mean_of_means)
+    file.write(f"\nMean of means: {mean_of_means}")
+
+print("Content written to file.")
