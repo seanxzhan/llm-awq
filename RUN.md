@@ -37,7 +37,10 @@ def save_dataset_statistics(dataset_statistics, run_dir):
     out_path = os.path.join(run_dir, "dataset_statistics.json")
 ```
 
+
 Commands to run experiments
+
+(Add ```--no_last_bit_eval``` for evaluating for 6 bits)
 ```bash
 # run awq
 python -m awq.entry --model_path openvla/openvla-7b \
