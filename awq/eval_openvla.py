@@ -36,7 +36,7 @@ def detokenize_actions(action_token_ids: np.ndarray, vla, action_tokenizer, unno
         normalized_actions,
     )
 
-    return actions
+    return actions, normalized_actions
 
 def load_model(path):
     # loads in original model
@@ -149,11 +149,15 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         num_workers=0,  # Important =>> Set to 0 if using RLDS; TFDS rolls its own parallelism!
     )
 
-    # Deque to store recent train metrics (used for computing smoothened metrics for gradient accumulation)
-    recent_losses = deque(maxlen=1)
-    recent_action_accuracies = deque(maxlen=1)
-    recent_l1_losses = deque(maxlen=1)
+    unnorm_key = "bridge_orig"
+    assert vla.get_action_dim("bridge_orig") == 7
 
+    # Deque to store recent train metrics (used for computing smoothened metrics for gradient accumulation)
+    # recent_losses = deque(maxlen=1)
+    # recent_action_accuracies = deque(maxlen=1)
+    # recent_l1_losses = deque(maxlen=1)
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     writer = SummaryWriter(os.path.join(run_dir, "summary"))
 
     assert args.batch_size == 1
@@ -161,61 +165,75 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
     # Evaluate!
     with tqdm.tqdm(total=len(dataloader), leave=False) as progress:
         for batch_idx, batch in enumerate(dataloader):
-            with torch.no_grad():
-                output: CausalLMOutputWithPast = vla(
-                    input_ids=batch["input_ids"].to(device_id),
-                    attention_mask=batch["attention_mask"].to(device_id),
-                    pixel_values=batch["pixel_values"].to(torch.bfloat16).to(device_id),
-                    labels=batch["labels"],
+            # Always with batch size 1!!!!!!
+            assert args.batch_size == 1
+
+            pixel_values = batch["pixel_values"].to(torch.bfloat16).to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            input_ids = batch["input_ids"].to(device)
+            labels = batch["labels"]
+
+            # DIY WARNING
+
+            # ================================
+            # INFERENCE
+            # ================================
+
+            # Remove Prompt
+            input_ids = input_ids[:, :-8]
+
+            # Add empty token if necessary
+            # NB: not necessary becuse I chunked properly here!
+            if not torch.all(input_ids[:, -1] == 29871):
+                assert False
+                input_ids = torch.cat(
+                    (input_ids, torch.unsqueeze(torch.Tensor([29871]).long(), dim=0).to(input_ids.device)), dim=1
                 )
-                loss = output.loss
 
-            # breakpoint()
-
-            # Compute Accuracy and L1 Loss for Logging
-            action_logits = output.logits[
-                :, 256:-1
-            ]  # 256 is hard coded, originally vla.module.vision_backbone.featurizer.patch_embed.num_patches
-            action_preds = action_logits.argmax(dim=2)
-            action_gt = batch["labels"][:, 1:].to(action_preds.device)
-            mask = action_gt > action_tokenizer.action_token_begin_idx
-            assert mask.sum().item() == 7
-            assert action_preds[:, -1] == 2
-            assert action_gt[:, -1] == 2
-
-            # no last bit
-            action_preds = action_preds[:, :-2]
-            action_gt = action_gt[:, :-2]
-            mask = mask[:, :-2]
-
-            # Compute Accuracy
-            correct_preds = (action_preds == action_gt) & mask
-            action_accuracy = correct_preds.sum().float() / mask.sum().float()
-
-            # Compute L1 Loss on Predicted (Continuous) Actions
-            continuous_actions_pred = torch.tensor(
-                action_tokenizer.decode_token_ids_to_actions(action_preds[mask].cpu().numpy())
+            # Generate
+            generated_ids = vla.generate(
+                input_ids=input_ids,  # Shape: [1, seq]
+                pixel_values=pixel_values,  # Shape: [1, 3, res, res] or Dict[str, ...]
+                max_new_tokens=vla.get_action_dim(unnorm_key),
+                attention_mask=attention_mask,
+                # Greedy sampling (max-likelihood)
+                do_sample=False,
             )
-            continuous_actions_gt = torch.tensor(
-                action_tokenizer.decode_token_ids_to_actions(action_gt[mask].cpu().numpy())
-            )
-            action_l1_loss = torch.nn.functional.l1_loss(continuous_actions_pred, continuous_actions_gt)
 
-            # breakpoint()
+            # ================================
+            # DETOKENIZATION
+            # ================================
 
-            # Store recent train metrics
-            recent_losses.append(loss.item())
-            recent_action_accuracies.append(action_accuracy.item())
-            recent_l1_losses.append(action_l1_loss.item())
+            # Extract predicted action tokens and translate into (normalized) continuous actions
+            predicted_action_token_ids = generated_ids[0, -vla.get_action_dim(unnorm_key) :].cpu().numpy()
+            predicted_actions, norm_predicted_actions = detokenize_actions(predicted_action_token_ids, vla, action_tokenizer, unnorm_key)
 
-            # Push Metrics to W&B (every 10 gradient steps)
+            gt_action_ids = labels[0, -8:-1].cpu().numpy()
+            gt_actions, norm_gt_actions = detokenize_actions(gt_action_ids, vla, action_tokenizer, unnorm_key)
+
+            # ================================
+            # DETOKENIZATION
+            # ================================
+
+            assert len(predicted_action_token_ids) == 7 and len(gt_action_ids) == 7
+            action_accuracy = (predicted_action_token_ids == gt_action_ids).sum() / 7.0
+            action_l2_loss = np.mean((predicted_actions - gt_actions) ** 2)
+            norm_action_l2_loss = np.mean((norm_predicted_actions - norm_gt_actions) ** 2)
+
+            action_accuracy_6 = (predicted_action_token_ids[:6] == gt_action_ids[:6]).sum() / 6.0
+            action_l2_loss_6 = np.mean((predicted_actions[:6] - gt_actions[:6]) ** 2)
+
+            # Write to tensorboard
             if distributed_state.is_main_process and batch_idx % 10 == 0:
-                writer.add_scalar("loss", loss, batch_idx)
                 writer.add_scalar("action_accuracy", action_accuracy, batch_idx)
-                writer.add_scalar("action_l1_loss", action_l1_loss, batch_idx)
+                writer.add_scalar("action_l2_loss", action_l2_loss, batch_idx)
+                writer.add_scalar("norm_action_l2_loss", norm_action_l2_loss, batch_idx)
+                writer.add_scalar("action_accuracy_6", action_accuracy_6, batch_idx)
+                writer.add_scalar("action_l2_loss_6", action_l2_loss_6, batch_idx)
 
             progress.update()
 
             if batch_idx == len(dataloader):
+            # if batch_idx == 100:
                 print(f"Dataset length {len(dataloader)} reached! Stopping evaluating...")
                 break
