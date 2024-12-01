@@ -46,13 +46,14 @@ Commands to run experiments
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --run_awq --dump_awq awq_cache/openvla.pt \
-    --cali
+    --calib_data openvla
 
 # run awq on lora
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
+    --lora_pt /sota/openvla/finetuned.pt \
     --run_awq --dump_awq awq_cache/openvla-lora.pt \
-    --cali
+    --calib_data openvla
 
 # Pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -61,36 +62,25 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname orig-train
-
-# Pretrained weights
-python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --eval_set_test\
-    --batch_size 1 \
-    --eval_root_dir eval \
-    --data_root_dir /datasets \
-    --dataset_name bridge_orig \
-    --expname orig-test
+    --expname orig
 
 # Pretrained weights with just linear layers pseudo quantized
 python -m awq.entry --model_path openvla/openvla-7b \
-    --eval_set_test\
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake \
     --dump_fake saved_models/naive.pt \
-    --batch_size 2 \
+    --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname naive 
+    --expname naive
 
 # evaluation on bridge_orig with pseudo linear salient quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
-    --eval_set_test \
     --tasks linear_salient_eval \
     --w_bit 4 --q_group_size 128 \
-    --calib_data openvla --batch_size 2 \
+    --calib_data openvla --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
@@ -98,17 +88,16 @@ python -m awq.entry --model_path openvla/openvla-7b \
 
 # evaluation on bridge_orig with awq pseudo quant (on test split)
 python -m awq.entry --model_path openvla/openvla-7b \
-     --eval_set_test \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake \
     --dump_fake saved_models/awq.pt \
     --load_awq awq_cache/openvla.pt \
-    --batch_size 2 \
+    --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname awq 
+    --expname awq
 
 # Finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -118,19 +107,31 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --lora_pt /sota/openvla/finetuned.pt \
-    --expname lora-orig-train
+    --expname lora-orig
 
-# Finetuned weights
+# Pretrained weights with just linear layers pseudo quantized
 python -m awq.entry --model_path openvla/openvla-7b \
-    --baseline --eval_set_test\
+    --tasks bridge_orig \
+    --w_bit 4 --q_group_size 128 \
+    --q_backend fake \
+    --dump_fake saved_models/lora-naive.pt \
     --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
     --lora_pt /sota/openvla/finetuned.pt \
-    --expname lora-orig-test
+    --expname lora-naive
 
-
+# evaluation on bridge_orig with pseudo linear salient quant (on test split)
+python -m awq.entry --model_path openvla/openvla-7b \
+    --tasks linear_salient_eval \
+    --w_bit 4 --q_group_size 128 \
+    --calib_data openvla --batch_size 1 \
+    --eval_root_dir eval \
+    --data_root_dir /datasets \
+    --dataset_name bridge_orig \
+    --lora_pt /sota/openvla/finetuned.pt \
+    --expname lora-salient
 
 # evaluation on bridge_orig with awq pseudo quant on finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
@@ -138,13 +139,14 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake \
-    --dump_fake saved_models/awq.pt \
-    --load_awq awq_cache/openvla.pt \
-    --batch_size 2 \
+    --dump_fake saved_models/lora-awq.pt \
+    --load_awq awq_cache/openvla-lora.pt \
+    --batch_size 1 \
     --eval_root_dir eval \
     --data_root_dir /datasets \
     --dataset_name bridge_orig \
-    --expname lora-awq-train
+    --lora_pt /sota/openvla/finetuned.pt \
+    --expname lora-awq
 
 # generate real quantized weights
 mkdir quant_cache

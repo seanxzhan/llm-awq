@@ -1,14 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-plt_name = 'plot-awq-5-trials'
-file_paths = [
-    'awq/summary_csvs/acc_summary_csv/awq-1_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-2_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-3_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-4_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-5_summary.csv',
-]
+
+# plt_name = 'plot-awq-5-trials'
+# file_paths = [
+#     'awq/summary_csvs/acc_summary_csv/awq-1_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/awq-2_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/awq-3_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/awq-4_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/awq-5_summary.csv',
+# ]
 # plt_name = 'plot-orig-no-last-bit-5-trials'
 # file_paths = [
 #     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-1_summary.csv',
@@ -24,10 +25,19 @@ file_paths = [
 #     'awq/summary_csvs/acc_summary_csv/salient-5_summary.csv',
 #     'awq/summary_csvs/acc_summary_csv/awq-5_summary.csv',
 # ]
-colors = ['green', 'blue', 'red', 'pink', 'orange']
-labels = ['awq-1', 'awq-2', 'awq-3', 'awq-4', 'awq-5']
-# colors = ['green', 'blue', 'red', 'pink']
-# labels = ['orig', 'naive', 'awq', 'salient']
+
+plt_name = 'plot-pretrained-weights-all-expts-train-100-datapoints'
+file_paths = [
+    'awq/summary_csvs/tested_on_train_100_datapoints/orig-train_summary.csv',
+    'awq/summary_csvs/tested_on_train_100_datapoints/naive-train_summary.csv',
+    'awq/summary_csvs/tested_on_train_100_datapoints/salient-train_summary.csv',
+    'awq/summary_csvs/tested_on_train_100_datapoints/awq-train_summary.csv',
+]
+
+# colors = ['green', 'blue', 'red', 'pink', 'orange']
+# labels = ['awq-1', 'awq-2', 'awq-3', 'awq-4', 'awq-5']
+colors = ['green', 'blue', 'red', 'pink']
+labels = ['orig', 'naive', 'awq', 'salient']
 
 # Load data into a list of dataframes
 data_frames = [pd.read_csv(file_path) for file_path in file_paths]

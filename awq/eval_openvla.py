@@ -54,7 +54,7 @@ def load_model(path):
 
 def load_model_lora(path, lora_pt):
     # loads in original model
-    AutoModelForVision2Seq.register(OpenVLAConfig, OpenVLAForActionPrediction)
+    # AutoModelForVision2Seq.register(OpenVLAConfig, OpenVLAForActionPrediction)
     vla = AutoModelForVision2Seq.from_pretrained(
         path,
         torch_dtype=torch.bfloat16,
@@ -84,12 +84,10 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
         vla = load_model(args.model_path)
     else:
         vla = load_model_lora(args.model_path, args.lora_pt)
-        assert vla_language_backbone is None
+        if args.baseline:
+            assert vla_language_backbone is None
     if vla_language_backbone is not None:
         vla.language_model = vla_language_backbone
-        print("---------")
-        print("yayyy")
-        print("---------")
 
     # [Validate] Ensure GPU Available & Set Device / Distributed Context
     distributed_state = PartialState()
@@ -218,22 +216,28 @@ def evaluate_vla(args, vla_language_backbone: LlamaForCausalLM = None) -> None:
             assert len(predicted_action_token_ids) == 7 and len(gt_action_ids) == 7
             action_accuracy = (predicted_action_token_ids == gt_action_ids).sum() / 7.0
             action_l2_loss = np.mean((predicted_actions - gt_actions) ** 2)
+            norm_action_l1_loss = np.mean(np.abs(norm_predicted_actions - norm_gt_actions))
             norm_action_l2_loss = np.mean((norm_predicted_actions - norm_gt_actions) ** 2)
 
             action_accuracy_6 = (predicted_action_token_ids[:6] == gt_action_ids[:6]).sum() / 6.0
             action_l2_loss_6 = np.mean((predicted_actions[:6] - gt_actions[:6]) ** 2)
+            norm_action_l1_loss_6 = np.mean(np.abs(norm_predicted_actions[:6] - norm_gt_actions[:6]))
+            norm_action_l2_loss_6 = np.mean((norm_predicted_actions[:6] - norm_gt_actions[:6]) ** 2)
 
             # Write to tensorboard
-            if distributed_state.is_main_process and batch_idx % 10 == 0:
-                writer.add_scalar("action_accuracy", action_accuracy, batch_idx)
-                writer.add_scalar("action_l2_loss", action_l2_loss, batch_idx)
-                writer.add_scalar("norm_action_l2_loss", norm_action_l2_loss, batch_idx)
-                writer.add_scalar("action_accuracy_6", action_accuracy_6, batch_idx)
-                writer.add_scalar("action_l2_loss_6", action_l2_loss_6, batch_idx)
+            # if distributed_state.is_main_process and batch_idx % 10 == 0:
+            writer.add_scalar("action_accuracy", action_accuracy, batch_idx)
+            writer.add_scalar("action_l2_loss", action_l2_loss, batch_idx)
+            writer.add_scalar("norm_action_l1_loss", norm_action_l1_loss, batch_idx)
+            writer.add_scalar("norm_action_l1_loss_6", norm_action_l1_loss_6, batch_idx)
+            writer.add_scalar("norm_action_l2_loss", norm_action_l2_loss, batch_idx)
+            writer.add_scalar("norm_action_l2_loss_6", norm_action_l2_loss_6, batch_idx)
+            writer.add_scalar("action_accuracy_6", action_accuracy_6, batch_idx)
+            writer.add_scalar("action_l2_loss_6", action_l2_loss_6, batch_idx)
 
             progress.update()
 
-            if batch_idx == len(dataloader):
-            # if batch_idx == 100:
+            # if batch_idx == len(dataloader):
+            if batch_idx == 1000:
                 print(f"Dataset length {len(dataloader)} reached! Stopping evaluating...")
                 break

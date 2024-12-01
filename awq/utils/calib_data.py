@@ -37,8 +37,9 @@ def get_calib_dataset_openvla(
 ):
     import os
 
-    dataset_dir = ("/mnt/align4_drive/rachelm8/tinyml/openvla-7b+calib_feat+b1--original/multimodal_embeddings"
-        #"/sota/openvla/ckpt/openvla-7b+calib_feat+b1--original/multimodal_embeddings"
+    dataset_dir = (
+        # "/mnt/align4_drive/rachelm8/tinyml/openvla-7b+calib_feat+b1--original/multimodal_embeddings"
+        "/sota/openvla/ckpt/openvla-7b+calib_feat+b1--original/multimodal_embeddings"
     )
     n_items = len(os.listdir(dataset_dir))
     samples = []

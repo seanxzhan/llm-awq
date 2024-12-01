@@ -227,14 +227,30 @@ def build_model_and_enc(model_path):
                 model_path, config=config, trust_remote_code=True, **kwargs
             )
         if openvla_mode:
-            # loading in the language backbone
-            model = AutoModelForVision2Seq.from_pretrained(
-                model_path,
-                torch_dtype=torch.bfloat16,
-                quantization_config=None,
-                low_cpu_mem_usage=True,
-                trust_remote_code=True,
-            ).language_model.to("cuda")
+            if args.lora_pt is None:
+                # loading in the language backbone
+                model = AutoModelForVision2Seq.from_pretrained(
+                    model_path,
+                    torch_dtype=torch.bfloat16,
+                    quantization_config=None,
+                    low_cpu_mem_usage=True,
+                    trust_remote_code=True,
+                ).language_model.to("cuda")
+            else:
+                full_model = AutoModelForVision2Seq.from_pretrained(
+                    model_path,
+                    torch_dtype=torch.bfloat16,
+                    quantization_config=None,
+                    low_cpu_mem_usage=True,
+                    trust_remote_code=True,
+                )
+                state_dict = torch.load(args.lora_pt)
+                state_dict_good = {}
+                for k, v in state_dict.items():
+                    state_dict_good[k[len("base_model.model."):]] = v
+                full_model.load_state_dict(state_dict_good)
+                model = full_model.language_model.to("cuda")
+                del full_model
 
         model.eval()
 
@@ -271,15 +287,9 @@ def build_model_and_enc(model_path):
                     args.dump_quant is None
                 ), "Need to use real quantization to dump quantized weights"
                 pseudo_quantize_model_weight(model, w_bit=args.w_bit, q_config=q_config)
-                print("---------")
-                print("yayyy")
-                print("---------")
                 if args.dump_fake:
                     model.save_pretrained(args.dump_fake)
                     print("Pseudo-quantized models saved at", args.dump_fake)
-                    print("---------")
-                    print("yayyy")
-                    print("---------")
             elif args.q_backend == "real":  # real quantization
                 real_quantize_model_weight(model, w_bit=args.w_bit, q_config=q_config)
                 if args.dump_quant:
