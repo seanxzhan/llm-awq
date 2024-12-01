@@ -1,18 +1,33 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-plt_name = 'plot-awq-no-last-bit-5-trials'
+plt_name = 'plot-awq-5-trials'
 file_paths = [
-    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-1_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-2_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-3_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-4_summary.csv',
-    'awq/summary_csvs/acc_summary_csv/awq-no-last-bit-5_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-1_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-2_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-3_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-4_summary.csv',
+    'awq/summary_csvs/acc_summary_csv/awq-5_summary.csv',
 ]
+# plt_name = 'plot-orig-no-last-bit-5-trials'
+# file_paths = [
+#     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-1_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-2_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-3_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-4_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/orig-no-last-bit-5_summary.csv',
+# ]
+# plt_name = 'plot-all-quantize-trials-5'
+# file_paths = [
+#     'awq/summary_csvs/acc_summary_csv/orig-5_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/naive-5_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/salient-5_summary.csv',
+#     'awq/summary_csvs/acc_summary_csv/awq-5_summary.csv',
+# ]
 colors = ['green', 'blue', 'red', 'pink', 'orange']
 labels = ['awq-1', 'awq-2', 'awq-3', 'awq-4', 'awq-5']
-#colors = ['green', 'blue', 'red', 'pink']
-#labels = ['orig', 'naive', 'awq', 'salient']
+# colors = ['green', 'blue', 'red', 'pink']
+# labels = ['orig', 'naive', 'awq', 'salient']
 
 # Load data into a list of dataframes
 data_frames = [pd.read_csv(file_path) for file_path in file_paths]
@@ -31,7 +46,7 @@ for i, df in enumerate(data_frames):
     plt.plot(df['Step'], smoothed_data_frames[i]['Value'], c=colors[i], label=f'{labels[i]}')
 
 plt.xlabel('Iteration')
-plt.ylabel('Loss')
+plt.ylabel('Average')
 plt.title(plt_name)
 plt.grid(alpha=0.3)
 plt.legend()
