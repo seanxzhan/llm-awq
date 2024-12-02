@@ -135,7 +135,6 @@ python -m awq.entry --model_path openvla/openvla-7b \
 
 # evaluation on bridge_orig with awq pseudo quant on finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
-     --eval_set_test \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
     --q_backend fake \
