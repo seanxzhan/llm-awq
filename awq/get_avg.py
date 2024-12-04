@@ -31,7 +31,7 @@ def main():
     
     # Colors and labels for different datasets
     colors = ['green', 'blue', 'red', 'pink']
-    labels = ['orig', 'naive', 'awq', 'salient']
+    labels = ['orig', 'naive', 'salient', 'awq']
     
     # Load data into a list of dataframes
     data_frames = [pd.read_csv(file_path) for file_path in args.file_paths]
@@ -66,12 +66,12 @@ def main():
         # Calculate and write means of the 'Value' column
         means = list(zip(labels, [df['Value'].mean() for df in data_frames]))
         file.write(str(means))
-        mean_values = [mean for _, mean in means]
+        #mean_values = [mean for _, mean in means]
 
         # Calculate the mean of the means
-        mean_of_means = np.mean(mean_values)
-        print(mean_of_means)
-        file.write(f"\nMean of means: {mean_of_means}")
+        #mean_of_means = np.mean(mean_values)
+        #print(mean_of_means)
+        #file.write(f"\nMean of means: {mean_of_means}")
 
     print("Content written to file.")
 
