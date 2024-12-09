@@ -1,3 +1,7 @@
+# OpenVLA-AWQ: Activation-aware Weight Quantization for OpenVLA
+
+This repo is built on top of LLM-AWQ. The original README is kept below. For instructions specific to OpenVLA-AWQ, please refer to [this document](RUN.md). 
+
 # AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration 
 [[Paper](https://arxiv.org/abs/2306.00978)][[Slides](https://www.dropbox.com/scl/fi/dtnp6h6y1mnp7g036axu6/AWQ-slide.pdf?rlkey=ffgh50hxhx8dmsnjiu8kef0ou&dl=0)][[Video](https://youtu.be/3dYLj9vjfA0)]
 

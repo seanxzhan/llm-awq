@@ -9,7 +9,7 @@ conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=
 
 Example activation script:
 ```bash
-conda activate /envs/awq
+conda activate awq
 
 export PATH="/usr/local/cuda-11.8/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH"
@@ -55,7 +55,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --run_awq --dump_awq awq_cache/openvla-lora.pt \
     --calib_data openvla
 
-# Pretrained weights
+# evaluate on OpenVLA pretrained weights
 python -m awq.entry --model_path openvla/openvla-7b \
     --baseline \
     --batch_size 1 \
@@ -64,7 +64,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname orig
 
-# Pretrained weights with just linear layers pseudo quantized
+# evaluate on OpenVLA pretrained weights with all linear layers quantized
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
@@ -76,7 +76,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname naive
 
-# evaluation on bridge_orig with pseudo linear salient quant (on test split)
+# evaluate on OpenVLA pretrained weights with salient quantization (keep 1% of salient at bfloat16)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks linear_salient_eval \
     --w_bit 4 --q_group_size 128 \
@@ -86,7 +86,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname salient
 
-# evaluation on bridge_orig with awq pseudo quant (on test split)
+# evaluate on OpenVLA pretrained weights with awq quantization (pseudo weights)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
@@ -99,7 +99,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --dataset_name bridge_orig \
     --expname awq
 
-# Finetuned weights
+# evaluate on lora finetuned weights
 python -m awq.entry --model_path openvla/openvla-7b \
     --baseline \
     --batch_size 1 \
@@ -109,7 +109,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --lora_pt /sota/openvla/finetuned.pt \
     --expname lora-orig
 
-# Pretrained weights with just linear layers pseudo quantized
+# evaluate on lora finetuned weights with all linear layers quantized
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
@@ -122,7 +122,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --lora_pt /sota/openvla/finetuned.pt \
     --expname lora-naive
 
-# evaluation on bridge_orig with pseudo linear salient quant (on test split)
+# evaluate on lora finetuned weights with salient quantization (keep 1% of salient at bfloat16)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks linear_salient_eval \
     --w_bit 4 --q_group_size 128 \
@@ -133,7 +133,7 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --lora_pt /sota/openvla/finetuned.pt \
     --expname lora-salient
 
-# evaluation on bridge_orig with awq pseudo quant on finetuned weights
+# evaluate on lora finetuned weights with awq quantization (pseudo weights)
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128 \
@@ -147,15 +147,15 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --lora_pt /sota/openvla/finetuned.pt \
     --expname lora-awq
 
-# generate real quantized weights
+# generate awq real quantized weights
 mkdir quant_cache
 python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --load_awq awq_cache/openvla.pt \
     --q_backend real --dump_quant quant_cache/openvla-awq.pt
 
-# evaluation on brige_orig with awq real quant (on test split)
-# not working right now due to bfloat16 vs. float16
+# evaluation on awq real quantized weights
+# not working right now due to bfloat16 vs. float16 error in c backend
 python -m awq.entry --model_path openvla/openvla-7b \
     --tasks bridge_orig \
     --w_bit 4 --q_group_size 128  --eval_set_test\
@@ -173,7 +173,3 @@ python -m awq.entry --model_path openvla/openvla-7b \
     --w_bit 4 --q_group_size 128 \
     --load_awq awq_cache/openvla.pt
 ```
-
-`auto_scale_block` points to `LlamaDecoderLayer` in https://vscode.dev/github/seanxzhan/llm-awq/blob/main/awq/quantize/auto_scale.py#L214. We can modify the function to try targetting different layers to resize.
-
-Relevant files for us: `entry.py`, `pre_quant.py`, `calib_data.py`, `auto_scale.py`, `quantizer.py`.
