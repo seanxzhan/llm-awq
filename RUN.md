@@ -25,11 +25,17 @@ cd openvla
 pip install -e .
 ```
 
-Put the calibration dataset (`openvla-7b+calib_feat+b1--original`) anywhere you want and change `dataset_dir` in `awq/utils/calib_data.py`'s `get_calib_dataset_openvla` function.
+# Datasets
+
+The three datasets mentioned below are in this [Goolge Drive folder](https://drive.google.com/drive/u/1/folders/1hzRDgc7UNzLYUd7zWuKJO9nde21yw026).
+
+Put the calibration dataset (`multimodal_embeddings`) anywhere you want and change `dataset_dir` in `awq/utils/calib_data.py`'s `get_calib_dataset_openvla` function. If you'd like to try out calibrating AWQ with just the language embeddings, use `language_embeddings`.
 
 Put the evaliation dataset (`bridge_orig`) anywhere you want and change `data_root_dir` in the awq commands below.
 
-Change `save_dataset_statistics` function in `openvla/prismatic/vla/datasets/rlds/utils/data_utils.py` to avoid runtime error:
+# OpenVLA Code Modification (Optional)
+
+Change `save_dataset_statistics` function in `openvla/prismatic/vla/datasets/rlds/utils/data_utils.py` to avoid runtime error if needed:
 ```bash
 def save_dataset_statistics(dataset_statistics, run_dir):
     """Saves a `dataset_statistics.json` file."""
@@ -37,6 +43,7 @@ def save_dataset_statistics(dataset_statistics, run_dir):
     out_path = os.path.join(run_dir, "dataset_statistics.json")
 ```
 
+# Experiments
 
 Commands to run experiments
 
